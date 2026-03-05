@@ -1,0 +1,48 @@
+<!-- _includes/details.html -->
+<details class="details">
+  <summary>{{ include.summary }}</summary>
+  <div class="details-content">
+    {{ include.content | markdownify }}
+  </div>
+</details>
+
+<!-- 内联样式 -->
+<style>
+  .details {
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    margin: 1.5em 0;
+    background: #f6f8fa;
+    overflow: hidden;
+  }
+
+  .details summary {
+    padding: 12px 16px;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s;
+  }
+
+  .details summary:hover {
+    background-color: #eaedf1;
+  }
+
+  .details[open] summary {
+    border-bottom: 1px solid #e1e4e8;
+    background: #ffffff;
+  }
+
+  .details-content {
+    padding: 16px;
+    background: white;
+  }
+
+  .details-content>*:first-child {
+    margin-top: 0;
+  }
+
+  .details-content>*:last-child {
+    margin-bottom: 0;
+  }
+</style>
